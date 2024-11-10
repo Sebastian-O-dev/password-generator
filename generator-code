@@ -11,6 +11,7 @@ You will be asked to decide the number of lowercase letters, uppercase letters, 
 be used in generating your password.
 Your password will be then generated using the program, and randomised in a way which meets top security standards for 
 passwords.\n""")
+
 nr_lowercase_letters = int(input("How many lowercase letters are to be used in your password?: "))
 nr_uppercase_letters = int(input("How many uppercase letters are to be used in your password?: "))
 nr_symbols = int(input("How many symbols are to be used in your password?: "))
@@ -21,16 +22,20 @@ password = []
 
 for i in range(0, nr_lowercase_letters):
     password.append(random.choice(lowercase_letters))
+
 for j in range(0, nr_uppercase_letters):
     password.append(random.choice(uppercase_letters))
+
 for k in range(0, nr_symbols):
     password.append(random.choice(symbols))
+
 for l in range(0, nr_numbers):
     password.append(random.choice(numbers))
 
 # could print: print("Your not randomised password is " + "".join(password))
 
 randomised_password = password[:]
+
 random.shuffle(randomised_password)
 
 print("Your randomised password is " + "".join(randomised_password))
